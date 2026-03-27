@@ -70,8 +70,8 @@
             bindings = <
 &kp ESC         &kp N1  &kp N2  &kp N3        &kp N4          &kp N5                 &kp N6     &kp N7               &kp N8       &kp N9     &kp N0         &kp EQUAL
 &kp TAB         &kp Q   &kp W   &kp E         &kp R           &kp T                  &kp Y      &kp U                &kp I        &kp O      &kp P          &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &lt 5 F         &kp G                  &kp H      &kp J                &kp K        &kp L      &kt SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C         &kp V           &lt 3 B                &kp N      &kp M                &lt 1 COMMA  &lt 2 DOT  &kp FSLH       &kp ENTER
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &lt 5 F         &kp G                  &kp H      &lt 5 J              &kp K        &kp L      &kt SEMICOLON  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C         &kp V           &lt 3 B                &kp N      &kp M                &lt 1 COMMA  &lt 2 DOT  &lt 4 SLASH    &kp ENTER
                                 &kp LEFT_WIN  &lt 1 UP_ARROW  &mt RIGHT_ALT RIGHT    &lt 0 DEL  &ToLayerTap 6 SPACE
                                               &lt 2 LEFT      &lt 4 DOWN             &kp ENTER
             >;
@@ -126,12 +126,12 @@
 
         Browser {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+&trans  &trans     &kp LC(ENTER)    &kp LC(L)         &trans         &trans      &trans  &trans  &trans           &trans         &trans     &trans
+&trans  &kp LC(W)  &kp LC(LS(T))    &kp LC(T)         &trans         &trans      &trans  &trans  &kp LC(T)        &kp LC(LS(T))  &kp LC(W)  &trans
+&trans  &trans     &kp LS(LC(TAB))  &kp LC(TAB)       &trans         &trans      &trans  &trans  &kp LS(LC(TAB))  &kp LC(TAB)    &trans     &trans
+&trans  &trans     &msc MOVE_Y(20)  &msc MOVE_Y(-20)  &trans         &trans      &trans  &trans  &trans           &trans         &trans     &trans
+                                    &trans            &kp PG_UP      &kp HOME    &trans  &trans
+                                                      &kp PAGE_DOWN  &kp END     &trans
             >;
         };
 
