@@ -51,17 +51,29 @@
         };
     };
 
+    behaviors {
+        ToLayerTap: ToLayerTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TOLAYERTAP";
+            bindings = <&to>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         QWERTY {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3     &kp N4          &kp N5                 &kp N6     &kp N7     &kp N8       &kp N9     &kp N0               &kp BACKSPACE
-&kp TAB         &kp Q   &kp W   &kp E      &kp R           &kp T                  &kp Y      &kp U      &kp I        &kp O      &kp P                &kp LBKT
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D      &lt 5 F         &kp G                  &kp H      &kp J      &kp K        &kp L      &mt LCTRL SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C      &kp V           &lt 3 B                &kp N      &kp M      &lt 1 COMMA  &lt 2 DOT  &kp FSLH             &kp RIGHT_SHIFT
-                                &kp SPACE  &lt 1 UP_ARROW  &mt RIGHT_ALT RIGHT    &lt 0 DEL  &kp SPACE
-                                           &lt 2 LEFT      &lt 4 DOWN             &kp ENTER
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4          &kp N5                 &kp N6     &kp N7               &kp N8       &kp N9     &kp N0         &kp EQUAL
+&kp TAB         &kp Q   &kp W   &kp E         &kp R           &kp T                  &kp Y      &kp U                &kp I        &kp O      &kp P          &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &lt 5 F         &kp G                  &kp H      &kp J                &kp K        &kp L      &kt SEMICOLON  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C         &kp V           &lt 3 B                &kp N      &kp M                &lt 1 COMMA  &lt 2 DOT  &kp FSLH       &kp ENTER
+                                &kp LEFT_WIN  &lt 1 UP_ARROW  &mt RIGHT_ALT RIGHT    &lt 0 DEL  &ToLayerTap 6 SPACE
+                                              &lt 2 LEFT      &lt 4 DOWN             &kp ENTER
             >;
         };
 
@@ -120,6 +132,17 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans
                                 &trans  &trans    &trans
+            >;
+        };
+
+        Numpad {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &kp KP_NUMLOCK  &kp SLASH  &kp ASTERISK  &kp MINUS  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp N7          &kp N8     &kp N9        &kp PLUS   &kp DEL  &kp BACKSPACE
+&trans  &trans  &trans  &trans  &trans  &trans    &kp N4          &kp N5     &kp N6        &kp PLUS   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp N1          &kp N2     &kp N3        &kp ENTER  &trans   &kp ENTER
+                        &trans  &trans  &trans    &kp N0          &kp DOT
+                                &trans  &trans    &to 0
             >;
         };
     };
