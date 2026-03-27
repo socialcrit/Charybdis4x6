@@ -68,12 +68,12 @@
 
         QWERTY {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4          &kp N5                 &kp N6     &kp N7               &kp N8       &kp N9     &kp N0         &kp EQUAL
-&kp TAB         &kp Q   &kp W   &kp E         &kp R           &kp T                  &kp Y      &kp U                &kp I        &kp O      &kp P          &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &lt 5 F         &kp G                  &kp H      &lt 5 J              &kp K        &kp L      &kt SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C         &kp V           &lt 3 B                &kp N      &kp M                &lt 1 COMMA  &lt 2 DOT  &lt 4 SLASH    &kp ENTER
-                                &kp LEFT_WIN  &lt 1 UP_ARROW  &mt RIGHT_ALT RIGHT    &lt 0 DEL  &ToLayerTap 6 SPACE
-                                              &lt 2 LEFT      &lt 4 DOWN             &kp ENTER
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4          &kp N5         &kp N6     &kp N7               &kp N8       &kp N9     &kp N0         &kp EQUAL
+&kp TAB         &kp Q   &kp W   &kp E         &kp R           &kp T          &kp Y      &kp U                &kp I        &kp O      &kp P          &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &lt 5 F         &kp G          &kp H      &lt 5 J              &kp K        &kp L      &kt SEMICOLON  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C         &kp V           &lt 3 B        &kp N      &kp M                &lt 1 COMMA  &lt 2 DOT  &lt 4 SLASH    &kp ENTER
+                                &kp LEFT_WIN  &lt 1 UP_ARROW  &lt 7 ENTER    &lt 0 DEL  &ToLayerTap 6 SPACE
+                                              &lt 2 LEFT      &lt 4 DOWN     &kp ENTER
             >;
         };
 
@@ -143,6 +143,17 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &kp N1          &kp N2     &kp N3        &kp ENTER  &trans   &kp ENTER
                         &trans  &trans  &trans    &kp N0          &kp DOT
                                 &trans  &trans    &to 0
+            >;
+        };
+
+        KeyMouseLayer {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+                                &trans  &trans    &trans
             >;
         };
     };
