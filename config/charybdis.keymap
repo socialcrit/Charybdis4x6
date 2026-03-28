@@ -63,6 +63,15 @@
         };
     };
 
+    macros {
+        DoubleClick: DoubleClick {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1 &mkp MB1>;
+            label = "DOUBLECLICK";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -115,12 +124,12 @@
 
         caret_layer {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LS(HOME)  &kp C_AC_SEARCH  &kp K_MUTE  &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
-&trans                &trans                &trans        &trans           &trans      &trans               &trans           &trans          &trans            &trans      &trans  &trans
-&trans                &trans                &trans        &trans           &trans      &trans               &trans           &trans          &trans            &trans      &trans  &trans
-&trans                &trans                &trans        &trans           &trans      &trans               &trans           &trans          &trans            &trans      &trans  &trans
-                                                          &trans           &trans      &trans               &trans           &trans
-                                                                           &trans      &trans               &trans
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LS(HOME)    &kp C_AC_SEARCH  &kp K_MUTE       &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
+&trans                &trans                &trans          &trans           &trans           &trans               &trans           &trans          &trans            &trans      &trans  &trans
+&trans                &trans                &mkp MB2        &mmv MOVE_UP     &mkp MB1         &trans               &trans           &trans          &trans            &trans      &trans  &trans
+&trans                &mkp MB3              &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans               &trans           &trans          &trans            &trans      &trans  &trans
+                                                            &trans           &trans           &trans               &trans           &trans
+                                                                             &trans           &trans               &trans
             >;
         };
 
@@ -148,12 +157,12 @@
 
         KeyMouseLayer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+&trans  &trans  &trans          &mkp MB3        &trans           &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mkp MB2        &mmv MOVE_UP    &mkp MB1         &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans          &trans          &trans           &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans          &trans           &trans    &trans  &trans
+                                                &trans           &trans    &trans
             >;
         };
     };
