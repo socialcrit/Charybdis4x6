@@ -32,12 +32,12 @@
         combo_equal {
             timeout-ms = <50>;
             key-positions = <20 21>;  // I + O
-            bindings = <&kp EQUAL>;    // =
+            bindings = <&kp LEFT_BRACKET>;    // =
         };
 
         combo_minus {
             timeout-ms = <50>;
-            key-positions = <19 20>;  // U + I
+            key-positions = <11 10>;  // U + I
             bindings = <&kp MINUS>;    // -
         };
 
@@ -57,7 +57,7 @@
 
         RhMB2 {
             bindings = <&mkp MB2>;
-            key-positions = <45 44>;
+            key-positions = <44 32>;
         };
 
         RhThumbMB1 {
