@@ -69,6 +69,16 @@
             bindings = <&mkp MB3>;
             key-positions = <44 32>;
         };
+
+        printScreenRight {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <9 10 11>;
+        };
+
+        printScreenLeft {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <0 1 2>;
+        };
     };
 
     behaviors {
@@ -97,12 +107,12 @@
 
         QWERTY {
             bindings = <
-&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4          &kp N5         &kp N6     &kp N7               &kp N8       &kp N9     &kp N0         &kp EQUAL
-&kp TAB         &kp Q   &kp W   &kp E         &kp R           &kp T          &kp Y      &kp U                &kp I        &kp O      &kp P          &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &lt 5 F         &kp G          &kp H      &lt 5 J              &kp K        &kp L      &kt SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z   &kp X   &kp C         &kp V           &lt 3 B        &kp N      &kp M                &lt 1 COMMA  &lt 2 DOT  &lt 4 SLASH    &kp ENTER
-                                &kp LEFT_WIN  &lt 1 UP_ARROW  &lt 7 ENTER    &lt 0 DEL  &ToLayerTap 6 SPACE
-                                              &lt 2 LEFT      &lt 4 DOWN     &kp ENTER
+&kp ESC         &kp N1  &kp N2  &kp N3        &kp N4        &kp N5         &kp N6     &kp N7               &kp N8       &kp N9     &kp N0         &lt 3 EQUAL
+&kp TAB         &kp Q   &kp W   &kp E         &kp R         &kp T          &kp Y      &kp U                &kp I        &kp O      &kp P          &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D         &lt 5 F       &kp G          &kp H      &lt 5 J              &kp K        &kp L      &kt SEMICOLON  &kp SQT
+&kp LCTRL       &kp Z   &kp X   &kp C         &kp V         &lt 3 B        &kp N      &kp M                &lt 1 COMMA  &lt 2 DOT  &lt 4 SLASH    &kp ENTER
+                                &kp LEFT_WIN  &kp LEFT_ALT  &lt 1 ENTER    &lt 0 DEL  &ToLayerTap 6 SPACE
+                                              &lt 2 LEFT    &lt 4 DOWN     &kp ENTER
             >;
         };
 
@@ -119,12 +129,12 @@
 
         scroll-layers {
             bindings = <
-&trans  &trans  &trans  &trans  &trans          &trans             &trans    &trans         &trans          &trans     &kp MINUS  &kp EQUAL
-&trans  &trans  &trans  &trans  &trans          &trans             &kp HOME  &kp PAGE_UP    &msc SCRL_UP    &trans     &trans     &kp RBKT
-&trans  &trans  &trans  &trans  &trans          &trans             &kp LEFT  &kp DOWN       &kp UP          &kp RIGHT  &trans     &kp BACKSLASH
-&trans  &trans  &trans  &trans  &trans          &trans             &kp END   &kp PAGE_DOWN  &msc SCRL_DOWN  &trans     &trans     &trans
-                        &trans  &kp UP_ARROW    &kp RIGHT_ARROW    &trans    &trans
-                                &kp LEFT_ARROW  &kp DOWN_ARROW     &trans
+&trans  &trans            &trans             &trans        &trans          &trans             &trans    &trans         &trans          &trans     &kp MINUS  &kp EQUAL
+&trans  &trans            &trans             &kp UP_ARROW  &trans          &trans             &kp HOME  &kp PAGE_UP    &msc SCRL_UP    &trans     &trans     &kp RBKT
+&trans  &trans            &kp LEFT           &kp DOWN      &kp RIGHT       &trans             &kp LEFT  &kp DOWN       &kp UP          &kp RIGHT  &trans     &kp BACKSLASH
+&trans  &kp LC(LS(LEFT))  &kp LC(LS(RIGHT))  &kp LC(LEFT)  &kp LC(RIGHT)   &trans             &kp END   &kp PAGE_DOWN  &msc SCRL_DOWN  &trans     &trans     &trans
+                                             &trans        &kp UP_ARROW    &kp RIGHT_ARROW    &trans    &trans
+                                                           &kp LEFT_ARROW  &kp DOWN_ARROW     &trans
             >;
         };
 
@@ -144,12 +154,12 @@
 
         caret_layer {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LS(HOME)    &kp C_AC_SEARCH  &kp K_MUTE       &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
-&trans                &trans                &trans          &trans           &trans           &trans               &trans           &trans          &trans            &trans      &trans  &trans
-&trans                &trans                &mkp MB2        &mmv MOVE_UP     &mkp MB1         &trans               &trans           &trans          &trans            &trans      &trans  &trans
-&trans                &mkp MB3              &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &DoubleClick         &trans           &trans          &trans            &trans      &trans  &trans
-                                                            &trans           &trans           &trans               &trans           &trans
-                                                                             &trans           &trans               &trans
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp LS(C_AC_SEARCH)  &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &kp C_VOLUME_UP  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans  &trans
+&trans                &trans                &kp C_PREV           &kp C_PLAY_PAUSE  &kp C_NEXT         &trans             &trans           &trans          &trans            &trans      &trans  &trans
+&trans                &trans                &mkp MB2             &mmv MOVE_UP      &mkp MB1           &trans             &trans           &trans          &trans            &trans      &trans  &trans
+&trans                &mkp MB3              &mmv MOVE_LEFT       &mmv MOVE_DOWN    &mmv MOVE_RIGHT    &DoubleClick       &trans           &trans          &trans            &trans      &trans  &trans
+                                                                 &trans            &trans             &trans             &trans           &trans
+                                                                                   &trans             &trans             &trans
             >;
         };
 
